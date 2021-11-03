@@ -13,7 +13,8 @@ class Pet extends Model
         'pet_name',
         'clinical_history',
         'pet_type',
-        'pedigree'
+        'pedigree',
+        'accept_terms'
     ];
 
     /* Relación de 1 a 1 
@@ -24,5 +25,11 @@ class Pet extends Model
 
     public function owner(){
         return $this->belongsTo(Owner::class);
+    }
+    public function setOptionsCheckboxesAttribute($value)
+    {
+         $this->attributes['pedigree'] = implode(', ', $value);
+         $this->attributes['accept_terms'] = implode(', ', $value);
+
     }
 }

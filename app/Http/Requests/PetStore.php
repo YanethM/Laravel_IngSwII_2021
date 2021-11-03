@@ -25,7 +25,11 @@ class PetStore extends FormRequest
     {
         return [
             'pet_name' => 'required | min:3 | max: 20',
-            'clinical_history' => 'required | max: 500'
+            'clinical_history' => 'required | max: 500',
+            'pet_type'=>'required',
+            'pedigree' => 'in:pedigree',
+            'accept_terms' => 'in:accept_terms'
         ];
     }
+
 }

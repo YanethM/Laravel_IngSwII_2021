@@ -28,6 +28,7 @@ class PetController extends Controller
      */
     public function create()
     {
+        
         $owners = Owner::pluck('id','name');
         return view('dashboard.pet.create',['pet' =>new Pet(), 'owners'=>$owners]);
     }

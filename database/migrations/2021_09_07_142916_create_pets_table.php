@@ -17,8 +17,9 @@ class CreatePetsTable extends Migration
             $table->id();
             $table->string('pet_name', 30)->nullable()->default('text');
             $table->text('clinical_history')->nullable();
-            $table->enum('pet_type', ['dog', 'cat'])->nullable()->default('dog');
-            $table->boolean('pedigree')->nullable()->default(false);
+            $table->enum('pet_type', ['dog', 'cat', 'rabbit','other'])->nullable()->default('dog');
+            $table->string('pedigree')->nullable();
+            $table->string('accept_terms')->nullable();
             $table->bigInteger('owner_id')->unsigned()->nullable();
             $table->timestamps();
         });
